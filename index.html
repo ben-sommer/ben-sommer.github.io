@@ -45,10 +45,6 @@ layout: default
                <div class="mui--text-black-54 mui--text-body2">LATEST POST</div>
                <div class="mui-divider"></div>
                {% for post in site.posts limit:1 %}
-                 <div style="margin: 20px 10%;padding: 0px;height: 180px;" class="mui-panel">
-                    <img src="https://media.mnn.com/assets/images/2017/01/cow-in-pasture.jpg.653x0_q80_crop-smart.jpg" style="height: 100%;width: 25%;object-fit: cover;">
-                 </div>
-                 <br>
                  <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
                  <div class="mui--text-black-54">By Comput3rz</div>
                  <div>{{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
