@@ -47,7 +47,7 @@ layout: default
                {% for post in site.posts limit:1 %}
                  <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
                  <div class="mui--text-black-54">By Comput3rz</div>
-                 <div>{{ post.content | strip_html | truncatewords:150 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
+                 <div>{{ post.content | strip_html | truncatewords:75 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
                  <br>
                  <br>
                {% endfor %}
@@ -58,7 +58,7 @@ layout: default
                {% for post in site.posts offset:1 %}
                  <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
                  <div class="mui--text-black-54">By Comput3rz</div>
-                 <div>{{ post.content | strip_html | truncatewords:150 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
+                 <div>{{ post.content | strip_html | truncatewords:75 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
                  <br>
                {% endfor %}
            </div>
