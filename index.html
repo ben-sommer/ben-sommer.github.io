@@ -11,8 +11,6 @@ layout: default
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="/js/search-script.js" type="text/javascript"></script>
             <input id="search-input" type="text" placeholder="Search posts" style="border: none;outline: none !important;width: 100%;font-size: 15px;">
-            <br>
-            <br>
             <div id="results-container">
             
             </div>
@@ -22,7 +20,7 @@ layout: default
            SimpleJekyllSearch({
              searchInput: document.getElementById('search-input'),
              resultsContainer: document.getElementById('results-container'),
-             searchResultTemplate: '<a href="{url}"><h1>{title}</h1></a><h2 class="searchresults">{date}</span></h2>',
+             searchResultTemplate: '<a href="{url}"><h2>{title}</h2></a><h3 class="searchresults">{date}</span></h3>',
              json: '/search.json'
            })
     
