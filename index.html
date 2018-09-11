@@ -3,30 +3,24 @@ layout: default
 ---
 
      <div class="mui-row">
-          
-        <div id="blackout" style="display: none; position: fixed;top: 0;right: 0;bottom: 0;left: 0;z-index: 99;background-color: rgba(0,0,0,.2);overflow: auto;"></div>
          
 
         <div class="mui-col-sm-10 mui-col-sm-offset-1">
           <br>
-          <div style="z-index: 100;" class="mui-panel">
+          <div class="mui-panel">
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="/js/search-script.js" type="text/javascript"></script>
             <input id="search-input" type="text" placeholder="Search posts" style="border: none;outline: none !important;width: 100%;font-size: 15px;">
-            <div style="display: none;" id="brk">
-               <div style="margin-top: 13px;margin-bottom: 10px;" class="mui-divider"></div>
-            </div>
             <div id="results-container">
             
             </div>
           </div>
-             
           
           <script>
            SimpleJekyllSearch({
              searchInput: document.getElementById('search-input'),
              resultsContainer: document.getElementById('results-container'),
-             searchResultTemplate: '<a href="{url}"><div class="mui--text-headline">{title}</div></a><div class="mui--text-subhead ">{date}</div>',
+             searchResultTemplate: '<a href="{url}"><h2>{title}</h2></a><h3 class="searchresults">{date}</span></h3>',
              json: '/search.json'
            })
     
@@ -35,14 +29,10 @@ layout: default
             var input = $(this).val();
             if (input.length > 0) {
              $('#results-container').show();
-             $('#brk').show();
-             $('#blackout').show();
-             $('#rest').css("overflow", "hidden");
+             $('#rest').hide();
             } else {
              $('#results-container').hide();
-             $('#brk').hide();
-             $('#blackout').hide();
-             $('#rest').css("overflow", "visible");
+             $('#rest').show();
             }
            });
    
@@ -66,7 +56,7 @@ layout: default
                <div class="mui--text-black-54 mui--text-body2">RECENT POSTS</div>
                <div class="mui-divider"></div>
                <br>
-               {% for post in site.posts offset:1 %}
+               {% for post in site.posts offset:1 limit:2 %}
                  <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
                  <div class="mui--text-black-54">By Comput3rz</div>
                  <div>{{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
