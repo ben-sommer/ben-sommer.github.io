@@ -56,7 +56,7 @@ layout: default
                <div class="mui--text-black-54 mui--text-body2">RECENT POSTS</div>
                <div class="mui-divider"></div>
                <br>
-               {% for post in site.posts offset:1 limit:2 %}
+               {% for post in site.posts offset:1 %}
                  <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
                  <div class="mui--text-black-54">By Comput3rz</div>
                  <div>{{ post.excerpt }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
