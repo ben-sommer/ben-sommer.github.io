@@ -20,7 +20,7 @@ layout: default
            SimpleJekyllSearch({
              searchInput: document.getElementById('search-input'),
              resultsContainer: document.getElementById('results-container'),
-             searchResultTemplate: '<a href="{url}"><h2>{title}</h2></a><h3 class="searchresults">{date}</span></h3>',
+             searchResultTemplate: '<a href="{url}"><div class="mui--text-headline">{title}</div></a><div class="mui--text-subhead">{date}</div>',
              json: '/search.json'
            })
     
