@@ -48,6 +48,10 @@ buttons {
   .sidebar-image {
     display: none;
   }
+  
+  .post-img {
+    display: none;
+  }
 }
 
 
@@ -60,6 +64,10 @@ buttons {
   }
 
   .sidebar-image {
+    display: block;
+  }
+  
+  .post-img {
     display: block;
   }
 }
