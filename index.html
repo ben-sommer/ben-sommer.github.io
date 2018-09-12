@@ -74,7 +74,7 @@ layout: default
           
           
         <div class="mui-col-md-2 mui-panel" style="margin-top: 130px;">
-          <h2>Archive</h2>
+          <h2 style="margin-top: 0px;">Archive</h2>
           {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%Y %b'"  %}
           {% for yearMonth in postsByYearMonth %}
             <h3 style="margin-bottom: 0px;">{{ yearMonth.name }}</h3>
