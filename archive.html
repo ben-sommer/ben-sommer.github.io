@@ -6,7 +6,7 @@ layout: default
     <div class="mui-col-sm-10 mui-col-sm-offset-1">
 	<div class="post">
 		<h2>Archive</h2>
-		<ul>
+		<ul style="padding-left: 0px;">
 		  {% for post in site.posts %}
 		    {% unless post.next %}
 		      <div class="mui--text-black-54 mui--text-title">{{ post.date | date: '%Y %b' }}</div>
