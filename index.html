@@ -47,7 +47,7 @@ layout: default
                <br>
                {% for post in site.posts limit:1 %}
                  <div style="margin: 10px 0px;margin-bottom: 15px;padding: 0px;height: 175px;" class="mui-panel">
-                   <img src="{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
+                   <img class="post-img" src="{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
                    <div style="width: 70%;float: right;margin: 10px;;">
                      <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
                      <div style="margin-bottom: 10px;" class="mui--text-black-54">By Comput3rz</div>
@@ -61,7 +61,7 @@ layout: default
                <br>
                {% for post in site.posts offset:1 %}
                  <div style="margin: 10px 0px;margin-bottom: 15px;padding: 0px;height: 175px;" class="mui-panel">
-                   <img src="{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
+                   <img class="post-img" src="{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
                    <div style="width: 70%;float: right;margin: 10px;;">
                      <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
                      <div style="margin-bottom: 10px;" class="mui--text-black-54">By Comput3rz</div>
