@@ -16,7 +16,14 @@ layout: default
 	      {% endif %}
 	    {% endunless %}
 
-	    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+	   <div style="margin: 10px 0px;margin-bottom: 15px;padding: 0px;height: 175px;" class="mui-panel">
+	    <img src="{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
+	    <div style="width: 70%;float: right;margin: 10px;;">
+	      <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
+	      <div style="margin-bottom: 10px;" class="mui--text-black-54">By Comput3rz</div>
+	      <div>{{ post.content | strip_html | truncatewords:75 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
+	    </div>
+	  </div>
 	  {% endfor %}
 	</ul>
 </div>
