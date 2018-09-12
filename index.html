@@ -42,7 +42,7 @@ layout: default
           <br>
           <br>
           <div id="rest">
-               <div class="mui--text-black-54 mui--text-body2">LATEST POST</div>
+               <div class="mui--text-black-54 mui--text-title">LATEST POST</div>
                <div class="mui-divider"></div>
                <br>
                {% for post in site.posts limit:1 %}
@@ -56,7 +56,7 @@ layout: default
                  </div>
                {% endfor %}
 
-               <div class="mui--text-black-54 mui--text-body2">RECENT POSTS</div>
+               <div class="mui--text-black-54 mui--text-title">RECENT POSTS</div>
                <div class="mui-divider"></div>
                <br>
                {% for post in site.posts offset:1 %}
