@@ -45,30 +45,40 @@ layout: default
                <div class="mui--text-black-54 mui--text-title">LATEST POST</div>
                <div class="mui-divider"></div>
                <br>
-               {% for post in site.posts limit:1 %}
-                 <div style="margin: 10px 0px;margin-bottom: 15px;padding: 0px;height: 175px;" class="mui-panel">
-                   <img class="post-img" src="https://comput3rz.github.io/post_img/{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
-                   <div style="width: 70%;float: right;margin: 10px;;">
-                     <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
-                     <div style="margin-bottom: 10px;" class="mui--text-black-54">By Comput3rz</div>
-                     <div>{{ post.content | strip_html | truncatewords:75 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
-                   </div>
-                 </div>
-               {% endfor %}
+               {% assign psize = site.posts | size %}
+               {% if psize == 0 %} 
+                 <p>No posts here...yet.</p>
+               {% else %}
+                    {% for post in site.posts limit:1 %}
+                      <div style="margin: 10px 0px;margin-bottom: 15px;padding: 0px;height: 175px;" class="mui-panel">
+                        <img class="post-img" src="https://comput3rz.github.io/post_img/{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
+                        <div style="width: 70%;float: right;margin: 10px;;">
+                          <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
+                          <div style="margin-bottom: 10px;" class="mui--text-black-54">By Comput3rz</div>
+                          <div>{{ post.content | strip_html | truncatewords:75 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
+                        </div>
+                      </div>
+                    {% endfor %}
+               {% endif %}
 
                <div class="mui--text-black-54 mui--text-title">RECENT POSTS</div>
                <div class="mui-divider"></div>
                <br>
-               {% for post in site.posts offset:1 %}
-                 <div style="margin: 10px 0px;margin-bottom: 15px;padding: 0px;height: 175px;" class="mui-panel">
-                   <img class="post-img" src="https://comput3rz.github.io/post_img/{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
-                   <div style="width: 70%;float: right;margin: 10px;;">
-                     <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
-                     <div style="margin-bottom: 10px;" class="mui--text-black-54">By Comput3rz</div>
-                     <div>{{ post.content | strip_html | truncatewords:75 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
-                   </div>
-                 </div>
-               {% endfor %}
+               {% assign psize = site.posts offset:1 | size %}
+               {% if psize == 0 %} 
+                 <p>No posts here...yet.</p>
+               {% else %}
+                    {% for post in site.posts offset:1 %}
+                      <div style="margin: 10px 0px;margin-bottom: 15px;padding: 0px;height: 175px;" class="mui-panel">
+                        <img class="post-img" src="https://comput3rz.github.io/post_img/{{ post.img }}" style="height: 100%;width: 25%;object-fit: cover;float: left;">
+                        <div style="width: 70%;float: right;margin: 10px;;">
+                          <div class="mui--text-headline"><a href="{{ site.baseurl }}{{ post.url }}" style="color: rgba(0,0,0,.87);">{{ post.title }}</a></div>
+                          <div style="margin-bottom: 10px;" class="mui--text-black-54">By Comput3rz</div>
+                          <div>{{ post.content | strip_html | truncatewords:75 }} <a href="{{ site.baseurl }}{{ post.url }}">Read more...</a></div>
+                        </div>
+                      </div>
+                    {% endfor %}
+               {% endif %}
            </div>
         </div>
           
