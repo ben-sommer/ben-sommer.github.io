@@ -15,3 +15,12 @@ layout: default
 
   {% include disqus.html %}
 </article>
+
+<script>
+  $(function() {
+    $("table").addClass("mui-table mui-table--bordered");
+    $("td").filter(function() {
+        return $(this).text() === "Starting point:";
+    }).css("font-weight", "bold");
+  })
+</script>
