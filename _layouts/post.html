@@ -28,12 +28,12 @@ layout: default
     
     // Bold Subheadings
     $("td").filter(function() {
-        return $(this).text() === "Title" || $(this).text() === "Date" || $(this).text() === "Starting point:" || $(this).text() === "Target for this lesson?" || $(this).text() === "Did I reach my target? " || $(this).text() === "How did I learn? What strategies were effective? " || $(this).text() === "What limited my learning? Which habits do I need to work on? " || $(this).text() === "What will I change for next time? How will I improve my learning?";
+        return $(this).text() === "Starting point:" || $(this).text() === "Target for this lesson?" || $(this).text() === "Did I reach my target? " || $(this).text() === "How did I learn? What strategies were effective? " || $(this).text() === "What limited my learning? Which habits do I need to work on? " || $(this).text() === "What will I change for next time? How will I improve my learning?";
     }).css("font-weight", "bold");
     
     // Bold and Big Heading
     $("td").filter(function() {
-      return $(this).text() === "Lesson Review";
+      return $(this).text() === "Title" || $(this).text() === "Date" || $(this).text() === "Lesson Review";
     }).css({
       "font-weight": "bold",
       "font-size": "20px"
