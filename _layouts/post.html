@@ -19,6 +19,7 @@ layout: default
 <script>
   $(function() {
     $("table").addClass("mui-table mui-table--bordered");
+    $("table").css("table-layout", "fixed");
     $("td").filter(function() {
         return $(this).text() === "Starting point:";
     }).css("font-weight", "bold");
