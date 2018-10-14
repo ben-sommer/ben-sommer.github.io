@@ -313,3 +313,13 @@ button:hover {
   margin: 5px 0;
   font-weight: 400;
 }
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #eeeeee;
+}
