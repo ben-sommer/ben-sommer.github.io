@@ -334,7 +334,7 @@ td:nth-child(even) {
     font-weight: 400;
 }
 
-table:nth-child(3) tr:nth-child(even) td {
+table:nth-child(3) tr:nth-child(odd) td {
     font-weight: 400;
 }
 
