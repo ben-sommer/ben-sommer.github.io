@@ -322,4 +322,13 @@ table {
 
 table, th, td {
     border: 1px solid #eeeeee;
+    padding: 0.5em;
+}
+
+td:nth-child(odd) {
+    font-weight: 700;
+}
+
+td:nth-child(even) {
+    font-weight: 400;
 }
