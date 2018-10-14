@@ -139,14 +139,14 @@ hr {
 
 .postImg {
   float: left;
-  height: 300px;
+  height: 250px;
   width: 300px;
 }
 
 .postImg img {
   object-fit: cover;
   width: 300px;
-  height: 300px;
+  height: 250px;
 }
 
 .postContent {
