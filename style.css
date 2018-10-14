@@ -333,10 +333,10 @@ td:nth-child(even) {
     font-weight: 400;
 }
 
-table:nth-child(3) tr:nth-child(even) {
+table:nth-child(3) tr:nth-child(even) td {
     font-weight: 400;
 }
 
-table:nth-child(3) tr:nth-child(1) {
+table:nth-child(3) tr:nth-child(1) td {
     font-weight: 700;
 }
