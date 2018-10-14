@@ -1,4 +1,9 @@
-<input id="search" type="text" placeholder="Search...">
+---
+layout: default
+---
+
+<div class="main">
+        <input id="search" type="text" placeholder="Search...">
         <div class="rest">
           <br>
           <br>
@@ -49,30 +54,4 @@
         <div class="results">
 
         </div>
-
-        <script>
-      $(function() {
-        $("#search").on("input", function() {
-          if ($("#search").val().length > 0) {
-            $(".rest").hide();
-            $(".results").show();
-          } else {
-            $(".rest").show();
-            $(".results").hide();
-          }
-        });
-      });
-    </script>
-
-    <script>
-       SimpleJekyllSearch({
-         searchInput: document.getElementById('search-input'),
-         resultsContainer: document.getElementById('results-container'),
-         searchResultTemplate: `
-         <br>
-         <a href="{url}"><h3>{title}</h3></a>
-         <h5>{date}</h5>
-         `,
-         json: '/search.json'
-       });
-    </script>
+      </div>
