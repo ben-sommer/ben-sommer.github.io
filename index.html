@@ -51,7 +51,7 @@ layout: default
             <br>
           {% endfor %}
         </div>
-        <div class="results">
+        <div class="results" id="results>
 
         </div>
       </div>
@@ -72,8 +72,8 @@ layout: default
 
     <script>
        SimpleJekyllSearch({
-         searchInput: document.getElementById('search-input'),
-         resultsContainer: document.getElementById('results-container'),
+         searchInput: document.getElementById('search'),
+         resultsContainer: document.getElementById('results'),
          searchResultTemplate: `
          <br>
          <a href="{url}"><h3>{title}</h3></a>
