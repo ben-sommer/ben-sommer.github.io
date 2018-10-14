@@ -153,6 +153,7 @@ hr {
   content: "";
   position:relative;
   z-index: 4;
+  padding-bottom: 0px;
 }
 
 .postContent p {
