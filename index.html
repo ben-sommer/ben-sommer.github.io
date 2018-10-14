@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css">
+    <title>Comput3rz Blog</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="mobile">
+        <h1>Comput3rz Blog</h1>
+        <a href="/">Blog</a>&nbsp;|&nbsp;<a href="/about">About</a>
+      </div>
+      <div class="sidebar desktop">
+        <div class="nav">
+          <h1>Comput3rz Blog</h1>
+          <p class="thin">Full Stack Web Developer from the UK.</p>
+          <br>
+          <a href="/" class="navLink">
+            <div class="linkContainer">
+              <p>Blog</p>
+            </div>
+          </a>
+          <a href="/about" class="navLink">
+            <div class="linkContainer">
+              <p>About</p>
+            </div>
+          </a>
+        </div>
+        <br>
+        <br>
+        <div class="archive">
+            <h2 style="margin-top: 0px;">Archive</h2>
+            {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'"  %}
+            <ul class="archive_list">
+              {% for yearMonth in postsByYearMonth %}
+                <li class="navbar-tags"><div class="linkContainer"><p>{{ yearMonth.name }}</p></div>
+                  <ul class="dropdown">
+                    {% for post in yearMonth.items %}
+                      <div class="linkContainer"><li><a href="{{ post.url }}">{{ post.title }}</a></li></div>
+                    {% endfor %}
+                  </ul>
+                </li>
+              {% endfor %}
+            </ul>
+        </div>
+      </div>
+      <div class="main">
+        <input id="search" type="text" placeholder="Search...">
+        <div class="rest">
+          <br>
+          <br>
+          <br>
+          <h1 class="thin">LATEST POST</h1>
+          <hr>
+          <br>
+          {% for post in site.posts limit:1 %}
+            <div class="post">
+              <div class="postImg">
+                <img src="https://comput3rz.github.io/post_img/{{ post.img }}">
+              </div>
+              <div class="postTitle">
+                <a href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
+              </div>
+              <div class="postContent">
+                  <p>
+                    {{ post.content | strip_html }}
+                  </p>
+              </div>
+              <a href="{{ site.baseurl }}{{ post.url }}"><button>READ MORE</button></a>
+            </div>
+          {% endfor %}
+          <br>
+          <br>
+          <h1 class="thin">RECENT POSTS</h1>
+          <hr>
+          <br>
+          {% for post in site.posts offset:1 %}
+            <div class="post">
+              <div class="postImg">
+                <img src="https://comput3rz.github.io/post_img/{{ post.img }}">
+              </div>
+              <div class="postTitle">
+                <a href="{{ site.baseurl }}{{ post.url }}"><h1>{{ post.title }}</h1></a>
+              </div>
+              <div class="postContent">
+                  <p>
+                    {{ post.content | strip_html }}
+                  </p>
+              </div>
+              <a href="{{ site.baseurl }}{{ post.url }}"><button>READ MORE</button></a>
+            </div>
+            <br>
+            <br>
+          {% endfor %}
+        </div>
+        <div class="results">
+
+        </div>
+      </div>
+    </div>
+
+    <script>
+      $(function() {
+        $("#search").on("input", function() {
+          if ($("#search").val().length > 0) {
+            $(".rest").hide();
+            $(".results").show();
+          } else {
+            $(".rest").show();
+            $(".results").hide();
+          }
+        });
+      });
+    </script>
+
+    <script>
+       SimpleJekyllSearch({
+         searchInput: document.getElementById('search-input'),
+         resultsContainer: document.getElementById('results-container'),
+         searchResultTemplate: `
+         <br>
+         <a href="{url}"><h3>{title}</h3></a>
+         <h5>{date}</h5>
+         `,
+         json: '/search.json'
+       });
+    </script>
+  </body>
+</html>
