@@ -332,3 +332,11 @@ td:nth-child(odd) {
 td:nth-child(even) {
     font-weight: 400;
 }
+
+table:nth-child(3) tr:nth-child(even) {
+    font-weight: 400;
+}
+
+table:nth-child(3) tr:nth-child(1) {
+    font-weight: 700;
+}
