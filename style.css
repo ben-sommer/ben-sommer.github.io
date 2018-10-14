@@ -49,6 +49,11 @@ h1 {
   margin-bottom: 1em;
 }
 
+.nav a {
+    text-decoration: none;
+    color: #000000;
+}
+
 .main {
   float: right;
   padding: 1em 1.4em;
