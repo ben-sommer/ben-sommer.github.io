@@ -1,55 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/style.css">
-    <title>Comput3rz Blog</title>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <div class="mobile">
-        <h1>Comput3rz Blog</h1>
-        <a href="/">Blog</a>&nbsp;|&nbsp;<a href="/about">About</a>
-      </div>
-      <div class="sidebar desktop">
-        <div class="nav">
-          <h1>Comput3rz Blog</h1>
-          <p class="thin">Full Stack Web Developer from the UK.</p>
-          <br>
-          <a href="/" class="navLink">
-            <div class="linkContainer">
-              <p>Blog</p>
-            </div>
-          </a>
-          <a href="/about" class="navLink">
-            <div class="linkContainer">
-              <p>About</p>
-            </div>
-          </a>
-        </div>
-        <br>
-        <br>
-        <div class="archive">
-            <h2 style="margin-top: 0px;">Archive</h2>
-            {% assign postsByYearMonth = site.posts | group_by_exp:"post", "post.date | date: '%B %Y'"  %}
-            <ul class="archive_list">
-              {% for yearMonth in postsByYearMonth %}
-                <li class="navbar-tags"><div class="linkContainer"><p>{{ yearMonth.name }}</p></div>
-                  <ul class="dropdown">
-                    {% for post in yearMonth.items %}
-                      <div class="linkContainer"><li><a href="{{ post.url }}">{{ post.title }}</a></li></div>
-                    {% endfor %}
-                  </ul>
-                </li>
-              {% endfor %}
-            </ul>
-        </div>
-      </div>
-      <div class="main">
-        <input id="search" type="text" placeholder="Search...">
+<input id="search" type="text" placeholder="Search...">
         <div class="rest">
           <br>
           <br>
@@ -100,10 +49,8 @@
         <div class="results">
 
         </div>
-      </div>
-    </div>
 
-    <script>
+        <script>
       $(function() {
         $("#search").on("input", function() {
           if ($("#search").val().length > 0) {
@@ -129,5 +76,3 @@
          json: '/search.json'
        });
     </script>
-  </body>
-</html>
