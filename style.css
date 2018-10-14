@@ -199,6 +199,7 @@ button {
   margin-bottom: 10px;
   cursor: pointer;
   font-size: 11px;
+  background-color: #ffffff;
 }
 
 button:hover {
