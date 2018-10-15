@@ -103,6 +103,7 @@ a {
   font-size: 18px;
   transition: 0.5s;
   margin-bottom: 1px;
+  border-radius: 0px;
 }
 
 .main input:focus {
