@@ -49,10 +49,12 @@ h1 {
   margin-bottom: 1em;
 }
 
-.nav a {
+.nav a, .mobile a {
     text-decoration: none;
     color: #000000;
 }
+
+.mobile a 
 
 .main {
   float: right;
